@@ -21,25 +21,39 @@
 	</head>
 	<body>
 		<div id="app">
+			<div class="bg-warning">
+				<h1 :class="myH1Style">EMAIL GENERATOR</h1>
+			</div>
 			<div class="container">
 				<div class="row justify-content-center">
-					<div class="col-5">
+					<div class="col-4 mt-2">
 						<div class="row">
 							<div class="col-12 px-0">
 								<ol class="list-group">
-									<li class="list-group-item">ciao</li>
+									<li v-for="element in mailContainer" class="list-group-item">
+										{{element}}
+									</li>
 								</ol>
 							</div>
 						</div>
 
 						<div class="row mt-3 justify-content-between">
 							<input
-								class="col-8 rounded"
+								class="col-5 rounded text-center"
 								type="text"
-								v-model="input"
+								v-model="emailNumber"
 								placeholder="Enter a number"
 								@keyup.enter="addItem(input)" />
-							<button class="col-3 text-center rounded fw-bold" @click="">GENERATE</button>
+							<button
+								class="col-5 text-center rounded fw-bold"
+								@click="getEmailList(emailNumber)">
+								GENERATE
+							</button>
+						</div>
+						<div class="row">
+							<button class="text-center rounded mt-3 fw-bold" @click="clearList()">
+								CLEAR LIST
+							</button>
 						</div>
 					</div>
 				</div>

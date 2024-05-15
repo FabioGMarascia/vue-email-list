@@ -6,25 +6,30 @@ createApp({
 			url: `https://flynn.boolean.careers/exercises/api/`,
 			dataTypeUrl: `random/mail`,
 			mailContainer: [],
-			x: null,
+			mail: null,
+			emailNumber: ``,
+			myH1Style: `text-center fw-bold display-3 text-black py-3`,
 		};
 	},
 	methods: {
 		generateEmail() {
 			axios.get(this.url + this.dataTypeUrl).then((result) => {
-				this.x = result.data.response;
-				this.mailContainer.push(this.x);
+				this.mail = result.data.response;
+				this.mailContainer.push(this.mail);
 			});
 		},
 		getEmailList(n) {
-			this.generateEmail();
-			for (let i = 0; i < n; i++) {
+			if (!this.emailNumber == ``) {
 				this.generateEmail();
+				for (let i = 0; i < n - 1; i++) {
+					this.generateEmail();
+				}
+				this.emailNumber = ``;
 			}
 		},
+		clearList() {
+			this.mailContainer.splice(0);
+		},
 	},
-	mounted() {
-		this.getEmailList(9);
-		console.log(this.mailContainer);
-	},
+	mounted() {},
 }).mount("#app");
