@@ -7,9 +7,7 @@ createApp({
 			dataTypeUrl: `random/mail`,
 			mailContainer: [],
 			mail: null,
-			emailNumber: ``,
-			dBlock: `d-block`,
-			dNone: `d-none`,
+			mailNumber: ``,
 			myH1Style: `text-center fw-bold display-3 text-black py-3`,
 		};
 	},
@@ -21,11 +19,11 @@ createApp({
 			});
 		},
 		getEmailList(n) {
-			if (!this.emailNumber == ``) {
+			if (!this.mailNumber == ``) {
 				for (let i = 0; i < n; i++) {
 					this.generateEmail();
 				}
-				this.emailNumber = ``;
+				this.mailNumber = ``;
 			}
 		},
 		clearList() {
