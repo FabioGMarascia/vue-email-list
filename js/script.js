@@ -20,7 +20,7 @@ createApp({
 			});
 		},
 		getEmailList(n) {
-			this.mailContainer.splice(0);
+			this.clearList();
 			if (!this.mailNumber == ``) {
 				for (let i = 0; i < n; i++) {
 					this.generateEmail();
