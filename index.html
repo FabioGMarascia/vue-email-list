@@ -29,7 +29,7 @@
 					<div class="col-4 mt-2">
 						<div class="row">
 							<div class="col-12 px-0">
-								<ol class="list-group">
+								<ol class="list-group" v-if="mailContainer.length == check ">
 									<li v-for="element in mailContainer" class="list-group-item">
 										{{element}}
 									</li>

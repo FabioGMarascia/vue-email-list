@@ -8,6 +8,7 @@ createApp({
 			mailContainer: [],
 			mail: null,
 			mailNumber: ``,
+			check: 0,
 			myH1Style: `text-center fw-bold display-3 text-black py-3`,
 		};
 	},
@@ -23,6 +24,7 @@ createApp({
 				for (let i = 0; i < n; i++) {
 					this.generateEmail();
 				}
+				this.check = this.mailNumber;
 				this.mailNumber = ``;
 			}
 		},
