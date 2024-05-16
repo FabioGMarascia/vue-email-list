@@ -43,7 +43,7 @@
 								type="text"
 								v-model="emailNumber"
 								placeholder="Enter a number"
-								@keyup.enter="addItem(input)" />
+								@keyup.enter="getEmailList(emailNumber)" />
 							<button
 								class="col-5 text-center rounded fw-bold"
 								@click="getEmailList(emailNumber)">

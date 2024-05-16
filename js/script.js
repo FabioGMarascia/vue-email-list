@@ -8,6 +8,8 @@ createApp({
 			mailContainer: [],
 			mail: null,
 			emailNumber: ``,
+			dBlock: `d-block`,
+			dNone: `d-none`,
 			myH1Style: `text-center fw-bold display-3 text-black py-3`,
 		};
 	},
@@ -20,8 +22,7 @@ createApp({
 		},
 		getEmailList(n) {
 			if (!this.emailNumber == ``) {
-				this.generateEmail();
-				for (let i = 0; i < n - 1; i++) {
+				for (let i = 0; i < n; i++) {
 					this.generateEmail();
 				}
 				this.emailNumber = ``;
